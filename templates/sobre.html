@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Identity </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Links do CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/padrao_style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre_style.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='imagens/icone_identity.png') }}">
+    </head>
+
+    <body>
+        <!-- Definindo a barra de navegação do site -->
+        <ul class="navbar">
+            <li><a class = "outras_paginas" href="{{ url_for('home') }}">Home</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('central_cores') }}">Cores</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('central_paletas') }}">Paletas</a></li>
+            <li><a class = "pagina_atual" href="{{ url_for('sobre') }}">Sobre</a></li>
+        </ul>
+    
+        <!-- Definindo a parte dos textos da página -->
+        <div class = "sobre_identity">
+            <h2 class = "titulo_identity"> Sobre o Identity </h2>
+            <p class = "texto_identity">O Identity é um projeto desenvolvido com o objetivo de estudar e praticar conceitos de desenvolvimento web, explorando tanto o front-end quanto o back-end.
+            Ao longo do desenvolvimento, foram aplicados conhecimentos em HTML, CSS e JavaScript, além do uso de Python com o framework Flask para organização das rotas e estrutura do projeto.
+            Este site também serve como um espaço para experimentar ideias, testar funcionalidades e evoluir continuamente como desenvolvedora, sempre buscando boas práticas de código, organização e usabilidade.
+            O projeto está em constante evolução e faz parte da minha jornada de aprendizado na área de tecnologia.</p>
+        </div>
+
+        <div class = "desenvolvedora">
+
+            <h2 class = "titulo_desenvolvedora"> Sobre a Desenvolvedora </h2>
+
+            <div class = "grid_desenvolvedora">
+
+                <div class = "imagem_desenvolvedora">
+                    <img class = "imagem" src="{{ url_for('static', filename='imagens/foto-desenvolvedora.jpeg') }}" alt="foto da desenvolvedora">
+                </div>
+            
+                <p class = "texto_desenvolvedora"> Sou estudante de Engenharia da Computação e tenho interesse em diversas áreas da programação, como back-end e bancos de dados. Gosto de aprender novas tecnologias e transformar estudo em projetos práticos, como forma de consolidar conhecimento.</p>
+        
+            </div>
+        </div>        
+
+        <!-- Definindo o rodapé do site -->
+        <footer class="footer">
+            <div class="footer-conteudo">
+                <h3>Identity</h3>
+
+                <p class="footer-descricao"> Projeto desenvolvido para fins de estudo em desenvolvimento web. </p>
+
+                <p class="footer-stack"> HTML - CSS - JavaScript - Python (Flask) </p>
+
+                <span class="footer-copy">
+                    © 2026 — Arieli Leandro
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>

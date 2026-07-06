@@ -1,0 +1,11 @@
+/* Estilo padrão da página */
+
+body {
+    background-color: rgb(226, 231, 231);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

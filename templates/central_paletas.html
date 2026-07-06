@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Identity </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Links do CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/padrao_style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/central_paletas_style.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='imagens/icone_identity.png') }}">
+    </head>
+
+    <body>
+        <!-- Definindo a barra de navegação do site -->
+        <ul class="navbar">
+            <li><a class = "outras_paginas" href="{{ url_for('home') }}">Home</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('central_cores') }}">Cores</a></li>
+            <li><a class = "pagina_atual" href="{{ url_for('central_paletas') }}">Paletas</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('sobre') }}">Sobre</a></li>
+        </ul>
+
+        <!-- Definindo a barra de pesquisa do polaroid -->
+         <div class = "grid_caixa_pesquisa">
+            <div class = "grid_img_pesquisa">
+                <img src="{{ url_for('static', filename='imagens/img_busca_sem_fundo.png') }}" class = "imagem_busca" alt="Buscar">
+                <input type="text" class = "input_busca" placeholder="Faça uma pesquisa">
+            </div>
+        </div>
+
+        <!-- Definindo o polaroid de paletas -->
+        <div class = "grid_polaroid">
+            {% for paleta in paletas %}
+                <div class="card_polaroid">
+                    <p class="nome_paleta">{{ paleta.nome_cor_paleta }}</p>
+                    <div class="quadrado_externo">
+                        <div class="container_cores">
+                            {% for cor in paleta.cores %}
+                            <div class="grid_cor">
+                                <div class="quadrado_interno" style="--cor: {{ cor.hex }};"> </div> 
+                                <span class="codigo_cor">{{cor.hex}}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class ="notificacao_paletas">
+            <p class="texto_notificacao"> Infelizmente não encontramos essa paleta </p>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/central_paletas.js') }}"></script>
+
+        <!-- Definindo o rodapé do site -->
+        <footer class="footer">
+            <div class="footer-conteudo">
+                <h3>Identity</h3>
+
+                <p class="footer-descricao"> Projeto desenvolvido para fins de estudo em desenvolvimento web. </p>
+
+                <p class="footer-stack"> HTML - CSS - JavaScript - Python (Flask) </p>
+
+                <span class="footer-copy">
+                    © 2026 — Arieli Leandro
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>

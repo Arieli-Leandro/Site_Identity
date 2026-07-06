@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Identity</title>
+
+        <!-- Links do CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/home_style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/padrao_style.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='imagens/icone_identity.png') }}">
+        
+    </head>
+    <body>
+        <!-- Definindo a barra de navegação do site -->
+        <ul class="navbar">
+            <li><a class = "pagina_atual" href="{{ url_for('home') }}">Home</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('central_cores') }}">Cores</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('central_paletas') }}">Paletas</a></li>
+            <li><a class = "outras_paginas" href="{{ url_for('sobre') }}">Sobre</a></li>
+        </ul>
+
+        <!-- Definindo o Carrossel de imagens-->
+        <div class="carrossel">
+            <div class="slides">
+            <img class = "imagem_carrossel" src="{{ url_for('static', filename='imagens/img-carrossel2.png') }}" alt="Imagem do Carrossel">
+            <img class = "imagem_carrossel" src="{{ url_for('static', filename='imagens/img-carrossel1.png') }}" alt="Imagem do Carrossel">
+            <img class = "imagem_carrossel" src="{{ url_for('static', filename='imagens/img-carrossel3.png') }}" alt="Imagem do Carrossel">
+            <img class = "imagem_carrossel" src="{{ url_for('static', filename='imagens/img-carrossel4.png') }}" alt="Imagem do Carrossel">
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+        <!-- Definindo o rodapé do site -->
+        <footer class="footer">
+            <div class="footer-conteudo">
+                <h3>Identity</h3>
+
+                <p class="footer-descricao"> Projeto desenvolvido para fins de estudo em desenvolvimento web. </p>
+
+                <p class="footer-stack"> HTML - CSS - JavaScript - Python (Flask) </p>
+
+                <span class="footer-copy">
+                    © 2026 — Arieli Leandro
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>
